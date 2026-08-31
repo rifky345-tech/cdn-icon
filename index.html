@@ -125,18 +125,9 @@
     <section class="bg-neutral-950 border border-neutral-800 rounded-lg p-6 sm:p-8 shadow-md">
       
       <div class="flex items-center justify-between mb-6 pb-4 border-b border-neutral-800 flex-wrap gap-3">
-        <div class="flex items-center gap-2 text-lg font-bold text-white">
-          <i class="fa-solid fa-border-all text-white"></i>
-          <span>Galeri Ikon Font Awesome Pro</span>
-        </div>
         
         <div class="flex items-center gap-3">
           <span class="text-xs font-semibold px-3 py-1 bg-neutral-900 border border-neutral-700 text-neutral-300 rounded-lg" id="icon-count">Memuat 13.346 varian ikon...</span>
-          <select id="items-per-page" onchange="changeItemsPerPage(this.value)" class="bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs px-2.5 py-1 rounded-lg focus:outline-none focus:border-white">
-            <option value="24">24 Ikon / Hal</option>
-            <option value="48" selected>48 Ikon / Hal</option>
-            <option value="96">96 Ikon / Hal</option>
-          </select>
         </div>
       </div>
 
@@ -682,6 +673,7 @@
 
         iconDatabase = expandedList;
         renderGallery();
+        checkUrlHash();
       } catch (err) {
         console.error('Gagal memuat icons.json', err);
       }
@@ -711,13 +703,132 @@
       renderGallery();
     }
 
+    const idSynonyms = {
+      'rumah': 'house',
+      'pengguna': 'user',
+      'orang': 'user',
+      'telepon': 'phone',
+      'hp': 'mobile',
+      'ponsel': 'mobile',
+      'bintang': 'star',
+      'surat': 'envelope',
+      'email': 'envelope',
+      'pesan': 'message',
+      'hati': 'heart',
+      'cinta': 'heart',
+      'mobil': 'car',
+      'pensil': 'pencil',
+      'tulis': 'pen',
+      'sampah': 'trash',
+      'hapus': 'trash',
+      'cari': 'magnifying-glass',
+      'kunci': 'lock',
+      'gembok': 'lock',
+      'folder': 'folder',
+      'berkas': 'folder',
+      'pengaturan': 'gear',
+      'setelan': 'sliders',
+      'toko': 'shop',
+      'keranjang': 'cart',
+      'bel': 'bell',
+      'lonceng': 'bell',
+      'kamera': 'camera',
+      'foto': 'camera',
+      'kalender': 'calendar',
+      'tanggal': 'calendar',
+      'api': 'fire',
+      'matahari': 'sun',
+      'bulan': 'moon',
+      'wifi': 'wifi',
+      'sinyal': 'signal',
+      'download': 'download',
+      'unduh': 'download',
+      'upload': 'upload',
+      'unggah': 'upload',
+      'mata': 'eye',
+      'lihat': 'eye',
+      'bagikan': 'share',
+      'simpan': 'floppy-disk',
+      'centang': 'check',
+      'silang': 'xmark',
+      'bantuan': 'circle-question',
+      'informasi': 'circle-info',
+      'peringatan': 'triangle-exclamation'
+    };
+
     function getFilteredIcons() {
-      return iconDatabase.filter(item => {
-        const text = (item.name + ' ' + item.label + ' ' + item.keywords + ' ' + item.style).toLowerCase();
-        const matchesQuery = text.includes(searchQuery);
+      if (!searchQuery) {
+        return iconDatabase.filter(item => (activeStyleFilter === 'all') || (item.style === activeStyleFilter));
+      }
+
+      const q = searchQuery.toLowerCase().trim();
+      const resolvedAlias = idSynonyms[q] || null;
+      const results = [];
+
+      iconDatabase.forEach(item => {
         const matchesStyle = (activeStyleFilter === 'all') || (item.style === activeStyleFilter);
-        return matchesQuery && matchesStyle;
+        if (!matchesStyle) return;
+
+        const name = item.name.toLowerCase();
+        const label = item.label.toLowerCase();
+        const keywords = item.keywords.toLowerCase();
+
+        let score = 0;
+
+        // 1. Exact name match, fa-name match, or Indonesian dictionary / alias match
+        if (name === q || `fa-${name}` === q || (resolvedAlias && name === resolvedAlias) || (q === 'home' && name === 'house') || (q === 'search' && name === 'magnifying-glass') || (q === 'cog' && name === 'gear') || (q === 'lock' && name === 'lock')) {
+          score = 1000;
+        } 
+        // 2. Name starts with search query
+        else if (name.startsWith(q)) {
+          score = 800;
+        } 
+        // 3. Name contains search query
+        else if (name.includes(q)) {
+          score = 600;
+        } 
+        // 4. Label starts with search query
+        else if (label.startsWith(q)) {
+          score = 500;
+        } 
+        // 5. Label contains search query
+        else if (label.includes(q)) {
+          score = 400;
+        } 
+        // 6. Keywords contain query as exact standalone word
+        else if (keywords.split(' ').includes(q)) {
+          score = 200;
+        } 
+        // 7. Keywords contain query substring
+        else if (keywords.includes(q)) {
+          score = 50;
+        }
+
+        if (score > 0) {
+          results.push({ item, score });
+        }
       });
+
+      // Sort by score descending (highest priority first); tie-break alphabetically
+      results.sort((a, b) => {
+        if (b.score !== a.score) {
+          return b.score - a.score;
+        }
+        return a.item.name.localeCompare(b.item.name);
+      });
+
+      return results.map(r => r.item);
+    }
+
+    function jumpToPage(val) {
+      const pageNum = parseInt(val, 10);
+      if (isNaN(pageNum) || pageNum < 1) return;
+      const filtered = getFilteredIcons();
+      const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
+      if (pageNum > totalPages) currentPage = totalPages;
+      else currentPage = pageNum;
+      renderGallery();
+      window.scrollTo({top: 250, behavior: 'smooth'});
     }
 
     function renderGallery() {
@@ -831,6 +942,25 @@
       nextBtn.disabled = (currentPage === totalPages);
       nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; renderGallery(); window.scrollTo({top: 250, behavior: 'smooth'}); } };
       btnWrapper.appendChild(nextBtn);
+
+      // QUICK JUMP TO PAGE INPUT
+      const jumpContainer = document.createElement('div');
+      jumpContainer.className = 'flex items-center gap-1.5 ml-2 text-xs text-neutral-400 font-medium';
+      jumpContainer.innerHTML = `
+        <span class="hidden sm:inline">Lompat:</span>
+        <input type="number" min="1" max="${totalPages}" placeholder="${currentPage}" onkeydown="if(event.key==='Enter') jumpToPage(this.value)" class="w-14 bg-neutral-900 border border-neutral-800 rounded-lg px-2 py-1 text-center text-white text-xs focus:outline-none focus:border-white shadow-md font-sans" title="Ketik nomor halaman lalu tekan Enter">
+      `;
+      btnWrapper.appendChild(jumpContainer);
+    }
+
+    function checkUrlHash() {
+      const hash = window.location.hash.replace('#', '').replace('icon-', '').toLowerCase().trim();
+      if (hash && iconDatabase.length > 0) {
+        const found = iconDatabase.find(i => i.name === hash);
+        if (found) {
+          openIconModal(found.name, found.prefix, found.unicode, found.styles);
+        }
+      }
     }
 
     function showToast(message) {
