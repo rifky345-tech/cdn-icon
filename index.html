@@ -1,33 +1,43 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Private Icon CDN - Font Awesome Pro v7.3.0</title>
-  <meta name="description" content="Portal CDN Pribadi untuk Aset Font Awesome Pro v7.3.0">
+  <title>Rifkyadi Icon CDN - Font Awesome Pro v7.3.0</title>
+  <meta name="description" content="Portal CDN Pribadi Font Awesome Pro v7.3.0 - Galeri & Pencarian 13.346 Varian Ikon">
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome Pro Local CDN Links (Seluruh 38 Stylesheet) -->
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- All 38 Local Font Awesome Pro Stylesheets -->
   <link rel="stylesheet" href="./v7.3.0/css/fontawesome.css">
-  
-  <!-- Standard Styles -->
   <link rel="stylesheet" href="./v7.3.0/css/solid.css">
   <link rel="stylesheet" href="./v7.3.0/css/regular.css">
   <link rel="stylesheet" href="./v7.3.0/css/light.css">
   <link rel="stylesheet" href="./v7.3.0/css/thin.css">
   <link rel="stylesheet" href="./v7.3.0/css/brands.css">
-  
-  <!-- Duotone Styles -->
   <link rel="stylesheet" href="./v7.3.0/css/duotone.css">
   <link rel="stylesheet" href="./v7.3.0/css/duotone-regular.css">
   <link rel="stylesheet" href="./v7.3.0/css/duotone-light.css">
   <link rel="stylesheet" href="./v7.3.0/css/duotone-thin.css">
-  
-  <!-- Sharp Styles -->
   <link rel="stylesheet" href="./v7.3.0/css/sharp-solid.css">
   <link rel="stylesheet" href="./v7.3.0/css/sharp-regular.css">
   <link rel="stylesheet" href="./v7.3.0/css/sharp-light.css">
@@ -36,13 +46,9 @@
   <link rel="stylesheet" href="./v7.3.0/css/sharp-duotone-regular.css">
   <link rel="stylesheet" href="./v7.3.0/css/sharp-duotone-light.css">
   <link rel="stylesheet" href="./v7.3.0/css/sharp-duotone-thin.css">
-  
-  <!-- Utility Styles -->
   <link rel="stylesheet" href="./v7.3.0/css/utility-semibold.css">
   <link rel="stylesheet" href="./v7.3.0/css/utility-duo-semibold.css">
   <link rel="stylesheet" href="./v7.3.0/css/utility-fill-semibold.css">
-  
-  <!-- Novelty & Custom Styles -->
   <link rel="stylesheet" href="./v7.3.0/css/chisel-regular.css">
   <link rel="stylesheet" href="./v7.3.0/css/etch-solid.css">
   <link rel="stylesheet" href="./v7.3.0/css/graphite-thin.css">
@@ -60,789 +66,1010 @@
   <link rel="stylesheet" href="./v7.3.0/css/thumbprint-light.css">
   <link rel="stylesheet" href="./v7.3.0/css/vellum-solid.css">
   <link rel="stylesheet" href="./v7.3.0/css/whiteboard-semibold.css">
-
-
-  <style>
-    :root {
-      --bg-dark: #0b0f19;
-      --bg-card: rgba(18, 24, 38, 0.75);
-      --accent: #6366f1;
-      --accent-glow: rgba(99, 102, 241, 0.35);
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --success: #10b981;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      line-height: 1.6;
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.08) 0%, transparent 45%);
-    }
-
-    header {
-      border-bottom: 1px solid var(--border-color);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11, 15, 25, 0.85);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), #8b5cf6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 15px var(--accent-glow);
-    }
-
-    .badge-status {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      color: var(--success);
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: var(--success);
-      box-shadow: 0 0 8px var(--success);
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
-      flex: 1;
-      width: 100%;
-    }
-
-    .hero {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .hero h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      background: linear-gradient(to right, #ffffff, #9ca3af);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      font-size: 1.15rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .search-box {
-      margin-top: 1.5rem;
-      max-width: 550px;
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 1rem 1.25rem 1rem 3rem;
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      background: rgba(18, 24, 38, 0.8);
-      color: var(--text-main);
-      font-size: 1rem;
-      outline: none;
-    }
-
-    .search-input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 20px var(--accent-glow);
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 1.1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-    }
-
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 1.75rem;
-      backdrop-filter: blur(12px);
-      margin-bottom: 2rem;
-    }
-
-    .card-header-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .count-badge {
-      font-size: 0.8rem;
-      padding: 0.2rem 0.6rem;
-      background: rgba(99, 102, 241, 0.15);
-      color: #818cf8;
-      border-radius: 6px;
-      border: 1px solid rgba(99, 102, 241, 0.25);
-    }
-
-    .cdn-link-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-    }
-
-    .cdn-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 0.85rem 1.25rem;
-      gap: 1rem;
-    }
-
-    .cdn-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .cdn-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .cdn-path {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.875rem;
-      color: #e5e7eb;
-      word-break: break-all;
-    }
-
-    .btn-copy {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 0.45rem 0.9rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.825rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      white-space: nowrap;
-    }
-
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1rem;
-    }
-
-    .icon-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.25rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .icon-box i {
-      font-size: 2rem;
-      color: var(--text-main);
-    }
-
-    .icon-box span {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    footer {
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-      padding: 1.75rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .copied-toast {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--success);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-      pointer-events: none;
-      z-index: 1000;
-    }
-
-    .copied-toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .category-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .category-title:first-of-type {
-      margin-top: 0;
-    }
-  </style>
 </head>
-<body>
+<body class="bg-black text-white font-sans min-h-screen flex flex-col antialiased selection:bg-white selection:text-black">
 
-  <header>
-    <div class="nav-container">
-      <div class="brand">
-        <div class="brand-icon">
-          <i class="fa-solid fa-layer-group"></i>
+  <!-- HEADER -->
+  <header class="bg-neutral-950 border-b border-neutral-800 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3 font-extrabold text-xl tracking-tight">
+        <div class="w-9 h-9 rounded-lg bg-white text-black flex items-center justify-center text-lg shadow-md">
+          <i class="fa-solid fa-shapes"></i>
         </div>
-        <span>Private Icon CDN</span>
+        <span class="text-white">Rifkyadi Icon CDN</span>
       </div>
-      <div class="badge-status">
-        <div class="status-dot"></div>
-        <span>v7.3.0 Live</span>
+      
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="toggleCdnModal()" class="bg-white text-black font-bold text-xs px-3.5 py-2 rounded-lg flex items-center gap-2 shadow-md">
+          <i class="fa-solid fa-link"></i> Daftar Link CDN (38)
+        </button>
+        <button onclick="toggleGuideModal()" class="bg-neutral-900 border border-neutral-700 text-white font-semibold text-xs px-3.5 py-2 rounded-lg flex items-center gap-2 shadow-md">
+          <i class="fa-solid fa-book"></i> Panduan
+        </button>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Font Awesome Pro v7.3.0 CDN</h1>
-      <p>Layanan CDN static cepat untuk meng-host seluruh 38 stylesheet & webfont ikon pribadi secara mandiri.</p>
-      
-      <div class="search-box">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="text" id="css-search" class="search-input" placeholder="Cari stylesheet (misal: utility, duotone, sharp, solid)..." onkeyup="filterCSS()">
-      </div>
-    </section>
-
-    <!-- Complete CSS Links Section -->
-    <section class="card">
-      <div class="card-header-flex">
-        <div class="card-title">
-          <i class="fa-solid fa-link" style="color: var(--accent);"></i>
-          <span>Daftar Lengkap Stylesheet CSS CDN</span>
-        </div>
-        <span class="count-badge">Total 38 Files</span>
-      </div>
-
-      <div class="cdn-link-group" id="css-list">
-        
-        <!-- CORE & BASIC -->
-        <div class="category-title"><i class="fa-solid fa-star"></i> Core & Standard Styles</div>
-        
-        <div class="cdn-item" data-search="fontawesome core main utama">
-          <div class="cdn-meta">
-            <div class="cdn-label">Font Awesome Pro Core (Wajib Ada)</div>
-            <div class="cdn-path" id="link-fontawesome">&lt;link rel="stylesheet" href="/v7.3.0/css/fontawesome.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-fontawesome')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="solid fas">
-          <div class="cdn-meta">
-            <div class="cdn-label">Solid Style</div>
-            <div class="cdn-path" id="link-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/solid.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="regular far">
-          <div class="cdn-meta">
-            <div class="cdn-label">Regular Style</div>
-            <div class="cdn-path" id="link-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="light fal">
-          <div class="cdn-meta">
-            <div class="cdn-label">Light Style</div>
-            <div class="cdn-path" id="link-light">&lt;link rel="stylesheet" href="/v7.3.0/css/light.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="thin fat">
-          <div class="cdn-meta">
-            <div class="cdn-label">Thin Style</div>
-            <div class="cdn-path" id="link-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/thin.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="brands fab">
-          <div class="cdn-meta">
-            <div class="cdn-label">Brands Style (Logo Social Media / Tech)</div>
-            <div class="cdn-path" id="link-brands">&lt;link rel="stylesheet" href="/v7.3.0/css/brands.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-brands')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <!-- UTILITY STYLES -->
-        <div class="category-title"><i class="fa-solid fa-sliders"></i> Utility Styles</div>
-
-        <div class="cdn-item" data-search="utility fill semibold fa-utility-fill fa-semibold">
-          <div class="cdn-meta">
-            <div class="cdn-label">Utility Fill Semibold Style</div>
-            <div class="cdn-path" id="link-utility-fill-semibold">&lt;link rel="stylesheet" href="/v7.3.0/css/utility-fill-semibold.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-utility-fill-semibold')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="utility duo semibold">
-          <div class="cdn-meta">
-            <div class="cdn-label">Utility Duo Semibold Style</div>
-            <div class="cdn-path" id="link-utility-duo-semibold">&lt;link rel="stylesheet" href="/v7.3.0/css/utility-duo-semibold.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-utility-duo-semibold')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="utility semibold">
-          <div class="cdn-meta">
-            <div class="cdn-label">Utility Semibold Style</div>
-            <div class="cdn-path" id="link-utility-semibold">&lt;link rel="stylesheet" href="/v7.3.0/css/utility-semibold.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-utility-semibold')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <!-- DUOTONE STYLES -->
-        <div class="category-title"><i class="fa-solid fa-clone"></i> Duotone Styles</div>
-
-        <div class="cdn-item" data-search="duotone fad">
-          <div class="cdn-meta">
-            <div class="cdn-label">Duotone Style</div>
-            <div class="cdn-path" id="link-duotone">&lt;link rel="stylesheet" href="/v7.3.0/css/duotone.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-duotone')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="duotone regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Duotone Regular Style</div>
-            <div class="cdn-path" id="link-duotone-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/duotone-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-duotone-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="duotone light">
-          <div class="cdn-meta">
-            <div class="cdn-label">Duotone Light Style</div>
-            <div class="cdn-path" id="link-duotone-light">&lt;link rel="stylesheet" href="/v7.3.0/css/duotone-light.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-duotone-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="duotone thin">
-          <div class="cdn-meta">
-            <div class="cdn-label">Duotone Thin Style</div>
-            <div class="cdn-path" id="link-duotone-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/duotone-thin.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-duotone-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <!-- SHARP STYLES -->
-        <div class="category-title"><i class="fa-solid fa-shapes"></i> Sharp & Sharp Duotone Styles</div>
-
-        <div class="cdn-item" data-search="sharp solid fass">
-          <div class="cdn-meta">
-            <div class="cdn-label">Sharp Solid Style</div>
-            <div class="cdn-path" id="link-sharp-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-solid.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-sharp-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="sharp regular fasr">
-          <div class="cdn-meta">
-            <div class="cdn-label">Sharp Regular Style</div>
-            <div class="cdn-path" id="link-sharp-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-sharp-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="sharp light fasl">
-          <div class="cdn-meta">
-            <div class="cdn-label">Sharp Light Style</div>
-            <div class="cdn-path" id="link-sharp-light">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-light.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-sharp-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="sharp thin fast">
-          <div class="cdn-meta">
-            <div class="cdn-label">Sharp Thin Style</div>
-            <div class="cdn-path" id="link-sharp-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-thin.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-sharp-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="sharp duotone solid fasds">
-          <div class="cdn-meta">
-            <div class="cdn-label">Sharp Duotone Solid Style</div>
-            <div class="cdn-path" id="link-sharp-duotone-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-duotone-solid.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-sharp-duotone-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="sharp duotone regular fasdr">
-          <div class="cdn-meta">
-            <div class="cdn-label">Sharp Duotone Regular Style</div>
-            <div class="cdn-path" id="link-sharp-duotone-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-duotone-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-sharp-duotone-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="sharp duotone light fasdl">
-          <div class="cdn-meta">
-            <div class="cdn-label">Sharp Duotone Light Style</div>
-            <div class="cdn-path" id="link-sharp-duotone-light">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-duotone-light.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-sharp-duotone-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="sharp duotone thin fasdt">
-          <div class="cdn-meta">
-            <div class="cdn-label">Sharp Duotone Thin Style</div>
-            <div class="cdn-path" id="link-sharp-duotone-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-duotone-thin.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-sharp-duotone-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <!-- SPECIALTY & NOVELTY STYLES -->
-        <div class="category-title"><i class="fa-solid fa-palette"></i> Specialty & Novelty Styles</div>
-
-        <div class="cdn-item" data-search="jelly regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Jelly Regular Style</div>
-            <div class="cdn-path" id="link-jelly-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/jelly-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-jelly-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="jelly duo regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Jelly Duo Regular Style</div>
-            <div class="cdn-path" id="link-jelly-duo-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/jelly-duo-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-jelly-duo-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="jelly fill regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Jelly Fill Regular Style</div>
-            <div class="cdn-path" id="link-jelly-fill-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/jelly-fill-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-jelly-fill-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="slab regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Slab Regular Style</div>
-            <div class="cdn-path" id="link-slab-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/slab-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-slab-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="slab duo regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Slab Duo Regular Style</div>
-            <div class="cdn-path" id="link-slab-duo-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/slab-duo-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-slab-duo-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="slab press regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Slab Press Regular Style</div>
-            <div class="cdn-path" id="link-slab-press-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/slab-press-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-slab-press-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="slab press duo regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Slab Press Duo Regular Style</div>
-            <div class="cdn-path" id="link-slab-press-duo-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/slab-press-duo-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-slab-press-duo-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="notdog solid">
-          <div class="cdn-meta">
-            <div class="cdn-label">Notdog Solid Style</div>
-            <div class="cdn-path" id="link-notdog-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/notdog-solid.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-notdog-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="notdog duo solid">
-          <div class="cdn-meta">
-            <div class="cdn-label">Notdog Duo Solid Style</div>
-            <div class="cdn-path" id="link-notdog-duo-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/notdog-duo-solid.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-notdog-duo-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="chisel regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Chisel Regular Style</div>
-            <div class="cdn-path" id="link-chisel-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/chisel-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-chisel-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="etch solid">
-          <div class="cdn-meta">
-            <div class="cdn-label">Etch Solid Style</div>
-            <div class="cdn-path" id="link-etch-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/etch-solid.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-etch-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="graphite thin">
-          <div class="cdn-meta">
-            <div class="cdn-label">Graphite Thin Style</div>
-            <div class="cdn-path" id="link-graphite-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/graphite-thin.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-graphite-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="mosaic solid">
-          <div class="cdn-meta">
-            <div class="cdn-label">Mosaic Solid Style</div>
-            <div class="cdn-path" id="link-mosaic-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/mosaic-solid.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-mosaic-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="pixel regular">
-          <div class="cdn-meta">
-            <div class="cdn-label">Pixel Regular Style</div>
-            <div class="cdn-path" id="link-pixel-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/pixel-regular.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-pixel-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="thumbprint light">
-          <div class="cdn-meta">
-            <div class="cdn-label">Thumbprint Light Style</div>
-            <div class="cdn-path" id="link-thumbprint-light">&lt;link rel="stylesheet" href="/v7.3.0/css/thumbprint-light.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-thumbprint-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="vellum solid">
-          <div class="cdn-meta">
-            <div class="cdn-label">Vellum Solid Style</div>
-            <div class="cdn-path" id="link-vellum-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/vellum-solid.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-vellum-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-        <div class="cdn-item" data-search="whiteboard semibold">
-          <div class="cdn-meta">
-            <div class="cdn-label">Whiteboard Semibold Style</div>
-            <div class="cdn-path" id="link-whiteboard-semibold">&lt;link rel="stylesheet" href="/v7.3.0/css/whiteboard-semibold.css"&gt;</div>
-          </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-whiteboard-semibold')"><i class="fa-regular fa-copy"></i> Salin Link</button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Icon Test Grid -->
-    <section class="card">
-      <div class="card-title">
-        <i class="fa-solid fa-vial-circle-check" style="color: #10b981;"></i>
-        <span>Pengujian Ikon Lokal</span>
-      </div>
-      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
-        Grid di bawah ini merender ikon langsung dari aset webfont <code>/v7.3.0/webfonts/</code> di server ini:
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full">
+    
+    <!-- SEARCH & HERO SECTION -->
+    <section class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2 text-white">
+        Cari & Temukan Ikon
+      </h1>
+      <p class="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto mb-6">
+        Ketik nama ikon yang Anda cari, klik ikon untuk menyalin kode snippet HTML / React / SVG dan link CDN.
       </p>
+
+      <!-- SEARCH BOX OPTIMIZED -->
+      <div class="max-w-xl mx-auto mb-5 relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400 text-base"></i>
+        <input type="text" id="icon-search" class="w-full pl-11 pr-4 py-3.5 rounded-lg border border-neutral-700 bg-neutral-900 text-white placeholder-neutral-500 text-base focus:outline-none focus:border-white shadow-md font-sans" placeholder="Cari di antara 13.346 varian ikon..." oninput="onSearchInput()">
+      </div>
+
+      <!-- FILTER STYLE PILLS -->
+      <div class="flex justify-center gap-2 flex-wrap" id="style-pills">
+        <button class="pill-btn bg-white text-black font-bold px-3.5 py-1.5 rounded-lg text-xs shadow-md" onclick="filterStyle('all', this)">Semua (13.346)</button>
+        <button class="pill-btn bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs" onclick="filterStyle('solid', this)">Solid</button>
+        <button class="pill-btn bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs" onclick="filterStyle('regular', this)">Regular</button>
+        <button class="pill-btn bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs" onclick="filterStyle('light', this)">Light</button>
+        <button class="pill-btn bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs" onclick="filterStyle('thin', this)">Thin</button>
+        <button class="pill-btn bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs" onclick="filterStyle('duotone', this)">Duotone</button>
+        <button class="pill-btn bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs" onclick="filterStyle('sharp-solid', this)">Sharp Solid</button>
+        <button class="pill-btn bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs" onclick="filterStyle('brands', this)">Brands</button>
+      </div>
+    </section>
+
+    <!-- ICON GALLERY GRID & PAGINATION (UTAMA) -->
+    <section class="bg-neutral-950 border border-neutral-800 rounded-lg p-6 sm:p-8 shadow-md">
       
-      <div class="preview-grid">
-        <div class="icon-box">
-          <i class="fa-solid fa-house"></i>
-          <span>fa-solid fa-house</span>
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-neutral-800 flex-wrap gap-3">
+        <div class="flex items-center gap-2 text-lg font-bold text-white">
+          <i class="fa-solid fa-border-all text-white"></i>
+          <span>Galeri Ikon Font Awesome Pro</span>
         </div>
-        <div class="icon-box">
-          <i class="fa-utility-fill fa-semibold fa-house"></i>
-          <span>utility-fill fa-house</span>
-        </div>
-        <div class="icon-box">
-          <i class="fa-solid fa-user-gear"></i>
-          <span>fa-user-gear</span>
-        </div>
-        <div class="icon-box">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span>fa-shield-halved</span>
-        </div>
-        <div class="icon-box">
-          <i class="fa-solid fa-rocket"></i>
-          <span>fa-rocket</span>
-        </div>
-        <div class="icon-box">
-          <i class="fa-solid fa-bolt"></i>
-          <span>fa-bolt</span>
-        </div>
-        <div class="icon-box">
-          <i class="fa-brands fa-github"></i>
-          <span>fa-github</span>
-        </div>
-        <div class="icon-box">
-          <i class="fa-brands fa-react"></i>
-          <span>fa-react</span>
+        
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-semibold px-3 py-1 bg-neutral-900 border border-neutral-700 text-neutral-300 rounded-lg" id="icon-count">Memuat 13.346 varian ikon...</span>
+          <select id="items-per-page" onchange="changeItemsPerPage(this.value)" class="bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs px-2.5 py-1 rounded-lg focus:outline-none focus:border-white">
+            <option value="24">24 Ikon / Hal</option>
+            <option value="48" selected>48 Ikon / Hal</option>
+            <option value="96">96 Ikon / Hal</option>
+          </select>
         </div>
       </div>
+
+      <!-- DYNAMIC GRID -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 min-h-[360px]" id="icon-grid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+      <!-- PAGINATION CONTROLS -->
+      <div class="flex items-center justify-between mt-8 pt-4 border-t border-neutral-800 flex-wrap gap-4" id="pagination-wrapper">
+        <div class="text-xs text-neutral-400 font-medium" id="page-info">
+          Memuat halaman...
+        </div>
+        <div class="flex items-center gap-2 flex-wrap" id="pagination-buttons">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Private Icon CDN &bull; Powered by Font Awesome Pro v7.3.0</p>
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800 text-center py-6 text-neutral-500 text-sm">
+    <p>&copy; 2026 Rifkyadi Icon CDN &bull; Powered by Font Awesome Pro v7.3.0</p>
   </footer>
 
-  <div class="copied-toast" id="toast">
-    <i class="fa-solid fa-check"></i> Berhasil disalin ke clipboard!
+  <!-- NOTIFICATION TOAST -->
+  <div class="toast fixed bottom-6 right-6 bg-white text-black border border-neutral-300 font-bold text-sm px-5 py-3 rounded-lg shadow-md transition-all duration-300 opacity-0 translate-y-3 pointer-events-none z-50 flex items-center gap-2" id="toast">
+    <i class="fa-solid fa-circle-check text-black"></i> <span id="toast-text">Berhasil Disalin!</span>
+  </div>
+
+  <!-- ALL 38 CDN LINKS MODAL -->
+  <div id="cdn-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="bg-neutral-950 border border-neutral-800 rounded-lg max-w-3xl w-full p-6 sm:p-8 shadow-md relative max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between pb-4 border-b border-neutral-800 mb-4">
+        <div class="flex items-center gap-2 text-lg font-bold text-white">
+          <i class="fa-solid fa-link text-white"></i>
+          <span>Daftar Lengkap 38 Link CSS CDN</span>
+        </div>
+        <button onclick="toggleCdnModal()" class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 flex items-center justify-center font-bold text-base hover:text-white">&times;</button>
+      </div>
+
+      <div class="mb-4 relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400 text-xs"></i>
+        <input type="text" id="cdn-search" class="w-full pl-9 pr-4 py-2.5 rounded-lg border border-neutral-700 bg-neutral-900 text-white placeholder-neutral-500 text-xs focus:outline-none focus:border-white font-sans" placeholder="Cari file CSS (misal: solid, regular, duotone, utility, sharp, jelly)..." onkeyup="filterCdnModalFiles()">
+      </div>
+
+      <div class="overflow-y-auto space-y-2 flex-1 pr-1" id="cdn-modal-list">
+        
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">1. Font Awesome Core (File Utama - Wajib Dipanggil)</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-1">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/fontawesome.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-1')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">2. Solid Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-2">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/solid.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-2')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">3. Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-3">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-3')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">4. Light Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-4">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/light.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-4')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">5. Thin Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-5">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/thin.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-5')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">6. Brands Style (Logo Sosmed & Tech)</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-6">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/brands.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-6')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">7. Duotone Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-7">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/duotone.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-7')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">8. Duotone Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-8">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/duotone-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-8')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">9. Duotone Light Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-9">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/duotone-light.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-9')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">10. Duotone Thin Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-10">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/duotone-thin.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-10')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">11. Sharp Solid Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-11">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/sharp-solid.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-11')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">12. Sharp Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-12">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/sharp-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-12')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">13. Sharp Light Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-13">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/sharp-light.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-13')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">14. Sharp Thin Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-14">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/sharp-thin.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-14')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">15. Sharp Duotone Solid Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-15">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/sharp-duotone-solid.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-15')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">16. Sharp Duotone Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-16">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/sharp-duotone-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-16')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">17. Sharp Duotone Light Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-17">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/sharp-duotone-light.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-17')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">18. Sharp Duotone Thin Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-18">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/sharp-duotone-thin.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-18')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">19. Utility Semibold Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-19">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/utility-semibold.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-19')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">20. Utility Duo Semibold Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-20">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/utility-duo-semibold.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-20')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">21. Utility Fill Semibold Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-21">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/utility-fill-semibold.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-21')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">22. Chisel Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-22">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/chisel-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-22')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">23. Etch Solid Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-23">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/etch-solid.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-23')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">24. Graphite Thin Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-24">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/graphite-thin.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-24')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">25. Jelly Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-25">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/jelly-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-25')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">26. Jelly Duo Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-26">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/jelly-duo-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-26')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">27. Jelly Fill Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-27">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/jelly-fill-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-27')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">28. Mosaic Solid Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-28">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/mosaic-solid.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-28')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">29. Notdog Solid Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-29">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/notdog-solid.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-29')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">30. Notdog Duo Solid Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-30">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/notdog-duo-solid.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-30')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">31. Pixel Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-31">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/pixel-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-31')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">32. Slab Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-32">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/slab-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-32')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">33. Slab Duo Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-33">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/slab-duo-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-33')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">34. Slab Press Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-34">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/slab-press-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-34')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">35. Slab Press Duo Regular Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-35">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/slab-press-duo-regular.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-35')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">36. Thumbprint Light Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-36">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/thumbprint-light.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-36')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">37. Vellum Solid Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-37">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/vellum-solid.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-37')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+        <div class="cdn-modal-item bg-neutral-900 border border-neutral-800 rounded-lg p-3 flex items-center justify-between gap-3 text-xs">
+          <div class="flex flex-col gap-0.5">
+            <span class="font-bold text-white">38. Whiteboard Semibold Style</span>
+            <code class="font-mono text-neutral-300 text-[11px]" id="m-38">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/whiteboard-semibold.css"&gt;</code>
+          </div>
+          <button onclick="copyModalCdnFile('m-38')" class="bg-white text-black font-bold px-3 py-1.5 rounded-lg text-xs shrink-0 shadow-md">Salin</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK CDN GUIDE MODAL -->
+  <div id="guide-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="bg-neutral-950 border border-neutral-800 rounded-lg max-w-2xl w-full p-6 sm:p-8 shadow-md relative">
+      <div class="flex items-center justify-between pb-4 border-b border-neutral-800 mb-4">
+        <div class="flex items-center gap-2 text-lg font-bold text-white">
+          <i class="fa-solid fa-book text-white"></i>
+          <span>Panduan Penggunaan CDN</span>
+        </div>
+        <button onclick="toggleGuideModal()" class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 flex items-center justify-center font-bold text-base hover:text-white">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-sm text-neutral-300">
+        <p>1. Impor file CSS dasar <code class="text-white bg-neutral-900 px-1.5 py-0.5 rounded border border-neutral-800 font-mono">fontawesome.css</code> (wajib) di &lt;head&gt; HTML Anda:</p>
+        <div class="bg-neutral-900 border border-neutral-800 rounded-lg p-3 font-mono text-xs text-white break-all flex justify-between items-center">
+          <code id="guide-core">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/fontawesome.css"&gt;</code>
+          <button onclick="copyGuideText('guide-core')" class="bg-white text-black font-bold text-[11px] px-2.5 py-1 rounded shadow-md shrink-0 ml-2">Salin</button>
+        </div>
+
+        <p>2. Tambahkan style CSS sesuai varian ikon yang Anda pakai (misal: Solid / Regular / Brands / Utility):</p>
+        <div class="bg-neutral-900 border border-neutral-800 rounded-lg p-3 font-mono text-xs text-white break-all flex justify-between items-center">
+          <code id="guide-style">&lt;link rel="stylesheet" href="https://icon.rifkyadi.tech/v7.3.0/css/solid.css"&gt;</code>
+          <button onclick="copyGuideText('guide-style')" class="bg-white text-black font-bold text-[11px] px-2.5 py-1 rounded shadow-md shrink-0 ml-2">Salin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONT AWESOME EXACT REPLICA ICON POPUP MODAL -->
+  <div id="icon-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="bg-neutral-950 border border-neutral-800 rounded-lg max-w-4xl w-full p-6 sm:p-8 shadow-md relative max-h-[90vh] overflow-y-auto">
+      
+      <!-- MODAL HEADER -->
+      <div class="flex items-center justify-between pb-4 border-b border-neutral-800 mb-6">
+        <div class="flex items-center gap-3">
+          <h2 id="modal-icon-title" class="text-2xl font-extrabold tracking-tight text-white capitalize">house</h2>
+          <i class="fa-solid fa-link text-neutral-500 text-sm cursor-pointer" onclick="copyModalDirectLink()"></i>
+          <span id="modal-unicode" class="font-mono text-xs text-neutral-400 bg-neutral-900 border border-neutral-800 px-2.5 py-1 rounded-lg">Unicode: f015</span>
+        </div>
+        <button onclick="closeIconModal()" class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 flex items-center justify-center font-bold text-base hover:text-white">
+          &times;
+        </button>
+      </div>
+
+      <!-- MODAL BODY GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
+        
+        <!-- LEFT PANEL: VISUAL ICON CANVAS & TOOLBAR -->
+        <div class="md:col-span-5 flex flex-col gap-4">
+          <div id="modal-canvas-box" class="bg-neutral-900 border border-neutral-800 rounded-lg h-64 flex items-center justify-center text-white transition-colors duration-200">
+            <i id="modal-icon-preview" class="fa-solid fa-house text-7xl"></i>
+          </div>
+
+          <!-- TOOLBAR CONTROLS -->
+          <div class="flex items-center justify-between bg-neutral-900 border border-neutral-800 rounded-lg p-2 px-3 text-xs text-neutral-300">
+            <div class="flex items-center gap-3">
+              <button onclick="toggleCanvasBg()" class="flex items-center gap-1.5 font-semibold text-neutral-400 hover:text-white" title="Ganti Background">
+                <i class="fa-solid fa-circle-half-stroke"></i> Bg
+              </button>
+              <button onclick="rotateIconModal()" class="flex items-center gap-1.5 font-semibold text-neutral-400 hover:text-white" title="Rotate 90deg">
+                <i class="fa-solid fa-rotate-right"></i> Putar
+              </button>
+              <button onclick="flipIconModal()" class="flex items-center gap-1.5 font-semibold text-neutral-400 hover:text-white" title="Flip Horizontal">
+                <i class="fa-solid fa-arrows-left-right"></i> Flip
+              </button>
+            </div>
+            <button onclick="resetIconModalControls()" class="font-semibold text-neutral-400 hover:text-white">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: CODE FORMAT TABS & SNIPPET EXPORT -->
+        <div class="md:col-span-7 flex flex-col justify-between">
+          <div>
+            <!-- SNIPPET FORMAT TABS -->
+            <div class="flex items-center gap-1 bg-neutral-900 border border-neutral-800 p-1 rounded-lg mb-4 text-xs font-semibold">
+              <button onclick="setSnippetTab('html', this)" class="modal-tab-btn flex-1 py-1.5 text-center rounded-lg bg-white text-black font-bold shadow-md">HTML</button>
+              <button onclick="setSnippetTab('svg', this)" class="modal-tab-btn flex-1 py-1.5 text-center rounded-lg text-neutral-400">SVG</button>
+              <button onclick="setSnippetTab('react', this)" class="modal-tab-btn flex-1 py-1.5 text-center rounded-lg text-neutral-400">REACT</button>
+              <button onclick="setSnippetTab('vue', this)" class="modal-tab-btn flex-1 py-1.5 text-center rounded-lg text-neutral-400">VUE</button>
+            </div>
+
+            <!-- CODE BOX (CLICK TO COPY) -->
+            <div onclick="copyModalSnippet()" class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 font-mono text-sm text-neutral-200 break-all cursor-pointer relative group mb-4 min-h-[90px] flex items-center">
+              <code id="modal-code-text">&lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;</code>
+              <span class="absolute top-2 right-2 text-[10px] bg-neutral-800 text-neutral-400 px-2 py-0.5 rounded-lg border border-neutral-700 font-sans font-semibold">Klik untuk Salin</span>
+            </div>
+
+            <!-- STYLE VARIANT SELECTOR BAR -->
+            <div class="mb-4">
+              <div class="text-xs font-bold text-neutral-400 mb-2 uppercase tracking-wider">Varian Style Ikon:</div>
+              <div class="flex items-center gap-2 flex-wrap" id="modal-style-buttons">
+                <!-- Dynamic style buttons inserted by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- PRIMARY ACTION BUTTONS -->
+          <div class="flex items-center gap-3 pt-4 border-t border-neutral-800">
+            <button onclick="copyModalSnippet()" class="flex-1 bg-white text-black font-bold text-sm py-2.5 rounded-lg flex items-center justify-center gap-2 shadow-md">
+              <i class="fa-solid fa-rocket"></i> Salin Snippet Kode
+            </button>
+            <button onclick="copyModalStyleCdn()" class="bg-neutral-900 border border-neutral-700 text-white font-semibold text-sm px-4 py-2.5 rounded-lg flex items-center gap-2">
+              <i class="fa-solid fa-link"></i> Salin Link CDN Style
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MODAL FOOTER TAGS -->
+      <div class="flex items-center gap-2 flex-wrap pt-4 border-t border-neutral-800">
+        <span class="text-xs font-bold text-neutral-500 uppercase">Tags:</span>
+        <span class="text-[11px] font-semibold bg-neutral-900 border border-neutral-800 text-neutral-300 px-2.5 py-0.5 rounded-lg">CLASSIC</span>
+        <span class="text-[11px] font-semibold bg-neutral-900 border border-neutral-800 text-neutral-300 px-2.5 py-0.5 rounded-lg">V7.3.0 PRO</span>
+        <span class="text-[11px] font-semibold bg-neutral-900 border border-neutral-800 text-neutral-300 px-2.5 py-0.5 rounded-lg">VECTOR</span>
+      </div>
+
+    </div>
   </div>
 
   <script>
-    function copyToClipboard(elementId) {
-      const origin = window.location.origin;
-      let text = document.getElementById(elementId).innerText;
-      
-      // Convert relative URLs to absolute CDN URLs (e.g., https://icon.rifkyadi.tech/v7.3.0/css/...)
-      if (origin.startsWith('http')) {
-        text = text.replace('href="/', `href="${origin}/`);
-      }
-      
-      navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById('toast');
-        toast.classList.add('show');
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 2000);
-      });
-    }
+    let iconDatabase = []; // Holds 13,346 icon style variants
+    let activeStyleFilter = 'all';
+    let searchQuery = '';
+    let currentPage = 1;
+    let itemsPerPage = 48;
 
-    function filterCSS() {
-      const query = document.getElementById('css-search').value.toLowerCase().trim();
-      const items = document.querySelectorAll('.cdn-item');
-      const categories = document.querySelectorAll('.category-title');
+    document.addEventListener('DOMContentLoaded', () => {
+      loadFullIconDatabase();
+    });
 
-      items.forEach(item => {
-        const searchText = (item.getAttribute('data-search') || '') + ' ' + item.innerText.toLowerCase();
-        if (searchText.includes(query)) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+    async function loadFullIconDatabase() {
+      try {
+        const res = await fetch('./v7.3.0/icons.json');
+        const data = await res.json();
+        
+        let expandedList = [];
 
-      // Show/hide categories based on visible items
-      categories.forEach(cat => {
-        let nextEl = cat.nextElementSibling;
-        let hasVisible = false;
-        while (nextEl && !nextEl.classList.contains('category-title')) {
-          if (nextEl.classList.contains('cdn-item') && nextEl.style.display !== 'none') {
-            hasVisible = true;
-            break;
+        const standardStyles = [
+          { name: 'solid', prefix: 'fa-solid' },
+          { name: 'regular', prefix: 'fa-regular' },
+          { name: 'light', prefix: 'fa-light' },
+          { name: 'thin', prefix: 'fa-thin' },
+          { name: 'duotone', prefix: 'fa-duotone' },
+          { name: 'sharp-solid', prefix: 'fa-sharp fa-solid' },
+          { name: 'sharp-regular', prefix: 'fa-sharp fa-regular' },
+          { name: 'sharp-light', prefix: 'fa-sharp fa-light' },
+          { name: 'sharp-thin', prefix: 'fa-sharp fa-thin' }
+        ];
+
+        Object.keys(data).forEach(key => {
+          const item = data[key];
+          const name = key;
+          const label = item.label || key;
+          const searchTerms = (item.search && item.search.terms) ? item.search.terms.join(' ') : '';
+          const unicode = item.unicode || 'f002';
+          const availableStyles = item.styles || ['solid'];
+
+          const isBrand = availableStyles.includes('brands');
+
+          if (isBrand) {
+            expandedList.push({
+              name,
+              label,
+              keywords: searchTerms,
+              style: 'brands',
+              prefix: 'fa-brands',
+              unicode,
+              styles: ['brands']
+            });
+          } else {
+            standardStyles.forEach(st => {
+              expandedList.push({
+                name,
+                label,
+                keywords: searchTerms,
+                style: st.name,
+                prefix: st.prefix,
+                unicode,
+                styles: availableStyles
+              });
+            });
           }
-          nextEl = nextEl.nextElementSibling;
-        }
-        cat.style.display = hasVisible ? 'flex' : 'none';
+        });
+
+        iconDatabase = expandedList;
+        renderGallery();
+      } catch (err) {
+        console.error('Gagal memuat icons.json', err);
+      }
+    }
+
+    function onSearchInput() {
+      searchQuery = document.getElementById('icon-search').value.toLowerCase().trim();
+      currentPage = 1; // Reset ke halaman 1 saat pencarian baru
+      renderGallery();
+    }
+
+    function filterStyle(style, btn) {
+      activeStyleFilter = style;
+      currentPage = 1; // Reset ke halaman 1 saat filter diubah
+      document.querySelectorAll('#style-pills .pill-btn').forEach(b => {
+        b.className = 'pill-btn bg-neutral-900 border border-neutral-800 text-neutral-300 font-semibold px-3.5 py-1.5 rounded-lg text-xs';
+      });
+      if (btn) {
+        btn.className = 'pill-btn bg-white text-black font-bold px-3.5 py-1.5 rounded-lg text-xs shadow-md';
+      }
+      renderGallery();
+    }
+
+    function changeItemsPerPage(num) {
+      itemsPerPage = parseInt(num, 10);
+      currentPage = 1;
+      renderGallery();
+    }
+
+    function getFilteredIcons() {
+      return iconDatabase.filter(item => {
+        const text = (item.name + ' ' + item.label + ' ' + item.keywords + ' ' + item.style).toLowerCase();
+        const matchesQuery = text.includes(searchQuery);
+        const matchesStyle = (activeStyleFilter === 'all') || (item.style === activeStyleFilter);
+        return matchesQuery && matchesStyle;
       });
     }
+
+    function renderGallery() {
+      const filtered = getFilteredIcons();
+      const totalItems = filtered.length;
+      const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const currentItems = filtered.slice(startIndex, endIndex);
+
+      const gridEl = document.getElementById('icon-grid');
+      gridEl.innerHTML = '';
+
+      if (currentItems.length === 0) {
+        gridEl.innerHTML = `
+          <div class="col-span-full text-center py-12 text-neutral-500 text-sm">
+            <i class="fa-solid fa-magnifying-glass text-3xl mb-2 inline-block"></i>
+            <p>Tidak ada varian ikon yang cocok dengan pencarian "<strong>${searchQuery}</strong>".</p>
+          </div>
+        `;
+      } else {
+        currentItems.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'icon-card bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-center flex flex-col items-center gap-2 cursor-pointer select-none relative';
+          
+          const fullClass = item.prefix.includes(item.name) ? item.prefix : `${item.prefix} fa-${item.name}`;
+          
+          card.onclick = () => openIconModal(item.name, item.prefix, item.unicode, item.styles);
+          card.innerHTML = `
+            <i class="${fullClass} text-4xl text-white my-1"></i>
+            <span class="font-mono text-[11px] text-neutral-200 truncate w-full">fa-${item.name}</span>
+            <span class="text-[10px] font-semibold text-neutral-400 bg-neutral-800 border border-neutral-700 px-2 py-0.5 rounded-lg uppercase tracking-wider">${item.style}</span>
+          `;
+          gridEl.appendChild(card);
+        });
+      }
+
+      // Update counters
+      document.getElementById('icon-count').innerText = `${totalItems.toLocaleString('id-ID')} Varian Ikon`;
+      document.getElementById('page-info').innerText = `Menampilkan Halaman ${currentPage.toLocaleString('id-ID')} dari ${totalPages.toLocaleString('id-ID')} (${totalItems.toLocaleString('id-ID')} Varian Ikon)`;
+
+      renderPaginationButtons(totalPages);
+    }
+
+    function renderPaginationButtons(totalPages) {
+      const btnWrapper = document.getElementById('pagination-buttons');
+      btnWrapper.innerHTML = '';
+
+      if (totalPages <= 1) return;
+
+      // PREV BUTTON
+      const prevBtn = document.createElement('button');
+      prevBtn.className = `px-3 py-1.5 rounded-lg text-xs font-semibold bg-neutral-900 border border-neutral-800 ${currentPage === 1 ? 'text-neutral-600 cursor-not-allowed' : 'text-white'}`;
+      prevBtn.innerHTML = `<i class="fa-solid fa-chevron-left"></i> Prev`;
+      prevBtn.disabled = (currentPage === 1);
+      prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderGallery(); window.scrollTo({top: 250, behavior: 'smooth'}); } };
+      btnWrapper.appendChild(prevBtn);
+
+      // SMART PAGE BUTTONS GENERATOR (e.g. 1 ... 4 5 6 ... 278)
+      let pagesToShow = [];
+      if (totalPages <= 7) {
+        for (let i = 1; i <= totalPages; i++) pagesToShow.push(i);
+      } else {
+        pagesToShow.push(1);
+        if (currentPage > 3) pagesToShow.push('...');
+        
+        let start = Math.max(2, currentPage - 1);
+        let end = Math.min(totalPages - 1, currentPage + 1);
+
+        if (currentPage <= 3) {
+          start = 2;
+          end = 4;
+        } else if (currentPage >= totalPages - 2) {
+          start = totalPages - 3;
+          end = totalPages - 1;
+        }
+
+        for (let i = start; i <= end; i++) pagesToShow.push(i);
+
+        if (currentPage < totalPages - 2) pagesToShow.push('...');
+        pagesToShow.push(totalPages);
+      }
+
+      pagesToShow.forEach(p => {
+        if (p === '...') {
+          const dots = document.createElement('span');
+          dots.className = 'px-2 text-xs text-neutral-500 font-bold';
+          dots.innerText = '...';
+          btnWrapper.appendChild(dots);
+        } else {
+          const pBtn = document.createElement('button');
+          if (p === currentPage) {
+            pBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-black shadow-md';
+          } else {
+            pBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-neutral-900 border border-neutral-800 text-neutral-300';
+          }
+          pBtn.innerText = p.toLocaleString('id-ID');
+          pBtn.onclick = () => { currentPage = p; renderGallery(); window.scrollTo({top: 250, behavior: 'smooth'}); };
+          btnWrapper.appendChild(pBtn);
+        }
+      });
+
+      // NEXT BUTTON
+      const nextBtn = document.createElement('button');
+      nextBtn.className = `px-3 py-1.5 rounded-lg text-xs font-semibold bg-neutral-900 border border-neutral-800 ${currentPage === totalPages ? 'text-neutral-600 cursor-not-allowed' : 'text-white'}`;
+      nextBtn.innerHTML = `Next <i class="fa-solid fa-chevron-right"></i>`;
+      nextBtn.disabled = (currentPage === totalPages);
+      nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; renderGallery(); window.scrollTo({top: 250, behavior: 'smooth'}); } };
+      btnWrapper.appendChild(nextBtn);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').innerText = message;
+      toast.classList.remove('opacity-0', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-3');
+      }, 2200);
+    }
+
+    function toggleGuideModal() {
+      const modal = document.getElementById('guide-modal');
+      if (modal.classList.contains('opacity-0')) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+      } else {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function toggleCdnModal() {
+      const modal = document.getElementById('cdn-modal');
+      if (modal.classList.contains('opacity-0')) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+      } else {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function copyGuideText(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Link CDN Berhasil Disalin!');
+      });
+    }
+
+    function copyModalCdnFile(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Link CSS Berhasil Disalin!');
+      });
+    }
+
+    function filterCdnModalFiles() {
+      const q = document.getElementById('cdn-search').value.toLowerCase().trim();
+      document.querySelectorAll('.cdn-modal-item').forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (text.includes(q)) item.style.display = 'flex';
+        else item.style.display = 'none';
+      });
+    }
+
+    /* FONT AWESOME EXACT REPLICA MODAL FUNCTIONS */
+    function openIconModal(iconName, styleClassPrefix, unicode, availableStyles = ['solid', 'regular']) {
+      currentModalIcon.name = iconName;
+      currentModalIcon.class = styleClassPrefix.includes(iconName) ? styleClassPrefix : `${styleClassPrefix} fa-${iconName}`;
+      currentModalIcon.unicode = unicode;
+      currentModalIcon.stylesAvailable = availableStyles;
+      
+      document.getElementById('modal-icon-title').innerText = iconName;
+      document.getElementById('modal-unicode').innerText = `Unicode: ${unicode}`;
+
+      renderModalStyleButtons();
+      updateModalPreview();
+
+      const modal = document.getElementById('icon-modal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    }
+
+    function closeIconModal() {
+      const modal = document.getElementById('icon-modal');
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    function renderModalStyleButtons() {
+      const container = document.getElementById('modal-style-buttons');
+      container.innerHTML = '';
+
+      currentModalIcon.stylesAvailable.forEach(st => {
+        const isCurrent = currentModalIcon.class.includes(st) || (st === 'utility' && currentModalIcon.class.includes('utility'));
+        const btn = document.createElement('button');
+        btn.className = isCurrent 
+          ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-black shadow-md border border-white'
+          : 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-neutral-900 border border-neutral-800 text-neutral-300';
+        btn.innerText = st.toUpperCase();
+        btn.onclick = () => switchModalIconStyle(st, btn);
+        container.appendChild(btn);
+      });
+    }
+
+    function switchModalIconStyle(styleName, btnElement) {
+      let newClass = `fa-${styleName} fa-${currentModalIcon.name}`;
+      if (styleName === 'solid') newClass = `fa-solid fa-${currentModalIcon.name}`;
+      else if (styleName === 'regular') newClass = `fa-regular fa-${currentModalIcon.name}`;
+      else if (styleName === 'light') newClass = `fa-light fa-${currentModalIcon.name}`;
+      else if (styleName === 'thin') newClass = `fa-thin fa-${currentModalIcon.name}`;
+      else if (styleName === 'duotone') newClass = `fa-duotone fa-${currentModalIcon.name}`;
+      else if (styleName === 'utility') newClass = `fa-utility-fill fa-semibold fa-${currentModalIcon.name}`;
+      else if (styleName === 'brands') newClass = `fa-brands fa-${currentModalIcon.name}`;
+
+      currentModalIcon.class = newClass;
+      currentModalIcon.style = styleName;
+
+      document.querySelectorAll('#modal-style-buttons button').forEach(b => {
+        b.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-neutral-900 border border-neutral-800 text-neutral-300';
+      });
+      if (btnElement) btnElement.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-black shadow-md border border-white';
+
+      updateModalPreview();
+    }
+
+    function updateModalPreview() {
+      const previewEl = document.getElementById('modal-icon-preview');
+      previewEl.className = `${currentModalIcon.class} text-7xl transition-transform duration-200`;
+      
+      let transform = `rotate(${currentRotation}deg)`;
+      if (currentFlipped) transform += ` scaleX(-1)`;
+      previewEl.style.transform = transform;
+
+      renderSnippetText();
+    }
+
+    function renderSnippetText() {
+      const codeEl = document.getElementById('modal-code-text');
+      const iconClass = currentModalIcon.class;
+
+      if (currentSnippetFormat === 'html') {
+        codeEl.innerText = `<i class="${iconClass}"></i>`;
+      } else if (currentSnippetFormat === 'svg') {
+        codeEl.innerText = `<svg class="icon ${iconClass}" aria-hidden="true"><use href="#${currentModalIcon.name}"></use></svg>`;
+      } else if (currentSnippetFormat === 'react') {
+        codeEl.innerText = `<FontAwesomeIcon icon="${iconClass}" />`;
+      } else if (currentSnippetFormat === 'vue') {
+        codeEl.innerText = `<font-awesome-icon icon="${iconClass}" />`;
+      }
+    }
+
+    function setSnippetTab(format, btn) {
+      currentSnippetFormat = format;
+      document.querySelectorAll('.modal-tab-btn').forEach(b => {
+        b.className = 'modal-tab-btn flex-1 py-1.5 text-center rounded-lg text-neutral-400';
+      });
+      if (btn) btn.className = 'modal-tab-btn flex-1 py-1.5 text-center rounded-lg bg-white text-black font-bold shadow-md';
+      renderSnippetText();
+    }
+
+    function copyModalSnippet() {
+      const text = document.getElementById('modal-code-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Snippet Kode Berhasil Disalin!');
+      });
+    }
+
+    function copyModalStyleCdn() {
+      const origin = window.location.origin.startsWith('http') ? window.location.origin : 'https://icon.rifkyadi.tech';
+      let styleFile = 'solid.css';
+      if (currentModalIcon.class.includes('utility')) styleFile = 'utility-fill-semibold.css';
+      else if (currentModalIcon.class.includes('regular')) styleFile = 'regular.css';
+      else if (currentModalIcon.class.includes('light')) styleFile = 'light.css';
+      else if (currentModalIcon.class.includes('thin')) styleFile = 'thin.css';
+      else if (currentModalIcon.class.includes('duotone')) styleFile = 'duotone.css';
+      else if (currentModalIcon.class.includes('brands')) styleFile = 'brands.css';
+
+      const linkTag = `<link rel="stylesheet" href="${origin}/v7.3.0/css/${styleFile}">`;
+      navigator.clipboard.writeText(linkTag).then(() => {
+        showToast(`Link CDN (${styleFile}) Disalin!`);
+      });
+    }
+
+    function copyModalDirectLink() {
+      const origin = window.location.origin.startsWith('http') ? window.location.origin : 'https://icon.rifkyadi.tech';
+      const link = `${origin}/#icon-${currentModalIcon.name}`;
+      navigator.clipboard.writeText(link).then(() => {
+        showToast('Direct Link Ikon Disalin!');
+      });
+    }
+
+    function toggleCanvasBg() {
+      canvasBgDark = !canvasBgDark;
+      const box = document.getElementById('modal-canvas-box');
+      const icon = document.getElementById('modal-icon-preview');
+
+      if (canvasBgDark) {
+        box.className = 'bg-neutral-900 border border-neutral-800 rounded-lg h-64 flex items-center justify-center text-white transition-colors duration-200';
+        icon.style.color = '#ffffff';
+      } else {
+        box.className = 'bg-white border border-neutral-300 rounded-lg h-64 flex items-center justify-center text-black transition-colors duration-200';
+        icon.style.color = '#000000';
+      }
+    }
+
+    function rotateIconModal() {
+      currentRotation = (currentRotation + 90) % 360;
+      updateModalPreview();
+    }
+
+    function flipIconModal() {
+      currentFlipped = !currentFlipped;
+      updateModalPreview();
+    }
+
+    function resetIconModalControls() {
+      currentRotation = 0;
+      currentFlipped = false;
+      canvasBgDark = true;
+      toggleCanvasBg();
+      canvasBgDark = true;
+      updateModalPreview();
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeIconModal();
+        const guideModal = document.getElementById('guide-modal');
+        if (!guideModal.classList.contains('opacity-0')) toggleGuideModal();
+        const cdnModal = document.getElementById('cdn-modal');
+        if (!cdnModal.classList.contains('opacity-0')) toggleCdnModal();
+      }
+    });
+
+    // Close modal when clicking backdrop
+    document.getElementById('icon-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'icon-modal') closeIconModal();
+    });
+    document.getElementById('guide-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'guide-modal') toggleGuideModal();
+    });
+    document.getElementById('cdn-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'cdn-modal') toggleCdnModal();
+    });
   </script>
 </body>
 </html>
