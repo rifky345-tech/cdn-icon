@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Icon CDN - Font Awesome Pro v7.3.0</title>
+  <meta name="description" content="Portal CDN Pribadi untuk Aset Font Awesome Pro v7.3.0">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Pro Local CDN Link for Testing -->
+  <link rel="stylesheet" href="./v7.3.0/css/fontawesome.css">
+  <link rel="stylesheet" href="./v7.3.0/css/solid.css">
+  <link rel="stylesheet" href="./v7.3.0/css/regular.css">
+  <link rel="stylesheet" href="./v7.3.0/css/brands.css">
+
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(18, 24, 38, 0.75);
+      --bg-card-hover: rgba(28, 36, 56, 0.85);
+      --accent: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.35);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.08) 0%, transparent 45%);
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.8);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .badge-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: var(--success);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--success);
+      box-shadow: 0 0 8px var(--success);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      flex: 1;
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffffff, #9ca3af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.75rem;
+      backdrop-filter: blur(12px);
+      margin-bottom: 2rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cdn-link-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cdn-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.85rem 1.25rem;
+      gap: 1rem;
+    }
+
+    .cdn-path {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      word-break: break-all;
+    }
+
+    .btn-copy {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .btn-copy:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .icon-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .icon-box:hover {
+      background: rgba(99, 102, 241, 0.1);
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .icon-box i {
+      font-size: 2rem;
+      color: var(--text-main);
+    }
+
+    .icon-box span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      padding: 1.75rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .copied-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--success);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      display: opacity;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .copied-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <span>Private Icon CDN</span>
+      </div>
+      <div class="badge-status">
+        <div class="status-dot"></div>
+        <span>v7.3.0 Live</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Font Awesome Pro v7.3.0 CDN</h1>
+      <p>Layanan CDN static cepat untuk meng-host file stylesheet dan webfont ikon pribadi secara mandiri.</p>
+    </section>
+
+    <!-- Quick Copy Section -->
+    <section class="card">
+      <div class="card-title">
+        <i class="fa-solid fa-link" style="color: var(--accent);"></i>
+        <span>Link CSS CDN</span>
+      </div>
+      <div class="cdn-link-group">
+        <div class="cdn-item">
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px;">Font Awesome Pro (Utama)</div>
+            <div class="cdn-path" id="link-main">&lt;link rel="stylesheet" href="/v7.3.0/css/fontawesome.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-main')">
+            <i class="fa-regular fa-copy"></i> Salin Link
+          </button>
+        </div>
+
+        <div class="cdn-item">
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px;">Solid Style</div>
+            <div class="cdn-path" id="link-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/solid.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-solid')">
+            <i class="fa-regular fa-copy"></i> Salin Link
+          </button>
+        </div>
+
+        <div class="cdn-item">
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px;">Regular Style</div>
+            <div class="cdn-path" id="link-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-regular')">
+            <i class="fa-regular fa-copy"></i> Salin Link
+          </button>
+        </div>
+
+        <div class="cdn-item">
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px;">Brands Style</div>
+            <div class="cdn-path" id="link-brands">&lt;link rel="stylesheet" href="/v7.3.0/css/brands.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-brands')">
+            <i class="fa-regular fa-copy"></i> Salin Link
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Icon Test Grid -->
+    <section class="card">
+      <div class="card-title">
+        <i class="fa-solid fa-vial-circle-check" style="color: #10b981;"></i>
+        <span>Pengujian Ikon Lokal</span>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+        Grid di bawah ini merender ikon langsung dari aset webfont <code>/v7.3.0/webfonts/</code> di server ini:
+      </p>
+      
+      <div class="preview-grid">
+        <div class="icon-box">
+          <i class="fa-solid fa-house"></i>
+          <span>fa-house</span>
+        </div>
+        <div class="icon-box">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>fa-user-gear</span>
+        </div>
+        <div class="icon-box">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>fa-shield-halved</span>
+        </div>
+        <div class="icon-box">
+          <i class="fa-solid fa-rocket"></i>
+          <span>fa-rocket</span>
+        </div>
+        <div class="icon-box">
+          <i class="fa-solid fa-bolt"></i>
+          <span>fa-bolt</span>
+        </div>
+        <div class="icon-box">
+          <i class="fa-brands fa-github"></i>
+          <span>fa-github</span>
+        </div>
+        <div class="icon-box">
+          <i class="fa-brands fa-react"></i>
+          <span>fa-react</span>
+        </div>
+        <div class="icon-box">
+          <i class="fa-brands fa-google"></i>
+          <span>fa-google</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Private Icon CDN &bull; Powered by Font Awesome Pro v7.3.0</p>
+  </footer>
+
+  <div class="copied-toast" id="toast">
+    <i class="fa-solid fa-check"></i> Berhasil disalin ke clipboard!
+  </div>
+
+  <script>
+    function copyToClipboard(elementId) {
+      const origin = window.location.origin;
+      let text = document.getElementById(elementId).innerText;
+      
+      // If deployed, convert relative URLs to absolute CDN URLs
+      if (origin.startsWith('http')) {
+        text = text.replace('href="/', `href="${origin}/`);
+      }
+      
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

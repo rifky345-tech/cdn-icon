@@ -1,0 +1,16 @@
+{
+  "name": "cdn-icon",
+  "version": "7.3.0",
+  "description": "Personal Icon CDN hosting Font Awesome Pro v7.3.0 assets",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "cdn",
+    "icons",
+    "font-awesome"
+  ],
+  "author": "",
+  "license": "UNLICENSED"
+}
