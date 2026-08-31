@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cdn-icon",
+  "compatibility_date": "2026-08-28",
+  "assets": {
+    "directory": ".",
+    "exclude": [
+      "node_modules/**",
+      ".git/**",
+      ".wrangler/**",
+      "package.json",
+      "package-lock.json",
+      "bun.lockb"
+    ]
+  }
+}
