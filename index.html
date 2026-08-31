@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="./v7.3.0/css/solid.css">
   <link rel="stylesheet" href="./v7.3.0/css/regular.css">
   <link rel="stylesheet" href="./v7.3.0/css/brands.css">
+  <link rel="stylesheet" href="./v7.3.0/css/utility-fill-semibold.css">
 
   <style>
     :root {
@@ -55,7 +56,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11, 15, 25, 0.8);
+      background: rgba(11, 15, 25, 0.85);
     }
 
     .nav-container {
@@ -118,7 +119,7 @@
 
     .hero {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
 
     .hero h1 {
@@ -134,8 +135,41 @@
     .hero p {
       color: var(--text-muted);
       font-size: 1.15rem;
-      max-width: 650px;
+      max-width: 700px;
       margin: 0 auto;
+    }
+
+    .search-box {
+      margin-top: 1.5rem;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.25rem 1rem 3rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background: rgba(18, 24, 38, 0.8);
+      color: var(--text-main);
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
     }
 
     .card {
@@ -148,23 +182,36 @@
       transition: border-color 0.2s ease;
     }
 
-    .card:hover {
-      border-color: rgba(99, 102, 241, 0.3);
+    .card-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     .card-title {
       font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
+    .count-badge {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border-radius: 6px;
+      border: 1px solid rgba(99, 102, 241, 0.25);
+    }
+
     .cdn-link-group {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.85rem;
     }
 
     .cdn-item {
@@ -176,11 +223,29 @@
       border-radius: 10px;
       padding: 0.85rem 1.25rem;
       gap: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .cdn-item:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      background: rgba(28, 36, 56, 0.5);
+    }
+
+    .cdn-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cdn-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
     .cdn-path {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       color: #e5e7eb;
       word-break: break-all;
     }
@@ -189,10 +254,10 @@
       background: var(--accent);
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.45rem 0.9rem;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.825rem;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -238,7 +303,7 @@
     }
 
     .icon-box span {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
       font-family: 'JetBrains Mono', monospace;
     }
@@ -262,16 +327,33 @@
       font-weight: 600;
       font-size: 0.9rem;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      display: opacity;
       opacity: 0;
       transform: translateY(10px);
       transition: all 0.3s ease;
       pointer-events: none;
+      z-index: 1000;
     }
 
     .copied-toast.show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    .category-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .category-title:first-of-type {
+      margin-top: 0;
     }
   </style>
 </head>
@@ -295,55 +377,345 @@
   <main>
     <section class="hero">
       <h1>Font Awesome Pro v7.3.0 CDN</h1>
-      <p>Layanan CDN static cepat untuk meng-host file stylesheet dan webfont ikon pribadi secara mandiri.</p>
+      <p>Layanan CDN static cepat untuk meng-host seluruh 38 stylesheet & webfont ikon pribadi secara mandiri.</p>
+      
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="css-search" class="search-input" placeholder="Cari stylesheet (misal: utility, duotone, sharp, solid)..." onkeyup="filterCSS()">
+      </div>
     </section>
 
-    <!-- Quick Copy Section -->
+    <!-- Complete CSS Links Section -->
     <section class="card">
-      <div class="card-title">
-        <i class="fa-solid fa-link" style="color: var(--accent);"></i>
-        <span>Link CSS CDN</span>
+      <div class="card-header-flex">
+        <div class="card-title">
+          <i class="fa-solid fa-link" style="color: var(--accent);"></i>
+          <span>Daftar Lengkap Stylesheet CSS CDN</span>
+        </div>
+        <span class="count-badge">Total 38 Files</span>
       </div>
-      <div class="cdn-link-group">
-        <div class="cdn-item">
-          <div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px;">Font Awesome Pro (Utama)</div>
-            <div class="cdn-path" id="link-main">&lt;link rel="stylesheet" href="/v7.3.0/css/fontawesome.css"&gt;</div>
+
+      <div class="cdn-link-group" id="css-list">
+        
+        <!-- CORE & BASIC -->
+        <div class="category-title"><i class="fa-solid fa-star"></i> Core & Standard Styles</div>
+        
+        <div class="cdn-item" data-search="fontawesome core main utama">
+          <div class="cdn-meta">
+            <div class="cdn-label">Font Awesome Pro Core (Wajib Ada)</div>
+            <div class="cdn-path" id="link-fontawesome">&lt;link rel="stylesheet" href="/v7.3.0/css/fontawesome.css"&gt;</div>
           </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-main')">
-            <i class="fa-regular fa-copy"></i> Salin Link
-          </button>
+          <button class="btn-copy" onclick="copyToClipboard('link-fontawesome')"><i class="fa-regular fa-copy"></i> Salin Link</button>
         </div>
 
-        <div class="cdn-item">
-          <div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px;">Solid Style</div>
+        <div class="cdn-item" data-search="solid fas">
+          <div class="cdn-meta">
+            <div class="cdn-label">Solid Style</div>
             <div class="cdn-path" id="link-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/solid.css"&gt;</div>
           </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-solid')">
-            <i class="fa-regular fa-copy"></i> Salin Link
-          </button>
+          <button class="btn-copy" onclick="copyToClipboard('link-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
         </div>
 
-        <div class="cdn-item">
-          <div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px;">Regular Style</div>
+        <div class="cdn-item" data-search="regular far">
+          <div class="cdn-meta">
+            <div class="cdn-label">Regular Style</div>
             <div class="cdn-path" id="link-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/regular.css"&gt;</div>
           </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-regular')">
-            <i class="fa-regular fa-copy"></i> Salin Link
-          </button>
+          <button class="btn-copy" onclick="copyToClipboard('link-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
         </div>
 
-        <div class="cdn-item">
-          <div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px;">Brands Style</div>
+        <div class="cdn-item" data-search="light fal">
+          <div class="cdn-meta">
+            <div class="cdn-label">Light Style</div>
+            <div class="cdn-path" id="link-light">&lt;link rel="stylesheet" href="/v7.3.0/css/light.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="thin fat">
+          <div class="cdn-meta">
+            <div class="cdn-label">Thin Style</div>
+            <div class="cdn-path" id="link-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/thin.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="brands fab">
+          <div class="cdn-meta">
+            <div class="cdn-label">Brands Style (Logo Social Media / Tech)</div>
             <div class="cdn-path" id="link-brands">&lt;link rel="stylesheet" href="/v7.3.0/css/brands.css"&gt;</div>
           </div>
-          <button class="btn-copy" onclick="copyToClipboard('link-brands')">
-            <i class="fa-regular fa-copy"></i> Salin Link
-          </button>
+          <button class="btn-copy" onclick="copyToClipboard('link-brands')"><i class="fa-regular fa-copy"></i> Salin Link</button>
         </div>
+
+        <!-- UTILITY STYLES -->
+        <div class="category-title"><i class="fa-solid fa-sliders"></i> Utility Styles</div>
+
+        <div class="cdn-item" data-search="utility fill semibold fa-utility-fill fa-semibold">
+          <div class="cdn-meta">
+            <div class="cdn-label">Utility Fill Semibold Style</div>
+            <div class="cdn-path" id="link-utility-fill-semibold">&lt;link rel="stylesheet" href="/v7.3.0/css/utility-fill-semibold.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-utility-fill-semibold')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="utility duo semibold">
+          <div class="cdn-meta">
+            <div class="cdn-label">Utility Duo Semibold Style</div>
+            <div class="cdn-path" id="link-utility-duo-semibold">&lt;link rel="stylesheet" href="/v7.3.0/css/utility-duo-semibold.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-utility-duo-semibold')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="utility semibold">
+          <div class="cdn-meta">
+            <div class="cdn-label">Utility Semibold Style</div>
+            <div class="cdn-path" id="link-utility-semibold">&lt;link rel="stylesheet" href="/v7.3.0/css/utility-semibold.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-utility-semibold')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <!-- DUOTONE STYLES -->
+        <div class="category-title"><i class="fa-solid fa-clone"></i> Duotone Styles</div>
+
+        <div class="cdn-item" data-search="duotone fad">
+          <div class="cdn-meta">
+            <div class="cdn-label">Duotone Style</div>
+            <div class="cdn-path" id="link-duotone">&lt;link rel="stylesheet" href="/v7.3.0/css/duotone.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-duotone')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="duotone regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Duotone Regular Style</div>
+            <div class="cdn-path" id="link-duotone-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/duotone-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-duotone-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="duotone light">
+          <div class="cdn-meta">
+            <div class="cdn-label">Duotone Light Style</div>
+            <div class="cdn-path" id="link-duotone-light">&lt;link rel="stylesheet" href="/v7.3.0/css/duotone-light.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-duotone-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="duotone thin">
+          <div class="cdn-meta">
+            <div class="cdn-label">Duotone Thin Style</div>
+            <div class="cdn-path" id="link-duotone-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/duotone-thin.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-duotone-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <!-- SHARP STYLES -->
+        <div class="category-title"><i class="fa-solid fa-shapes"></i> Sharp & Sharp Duotone Styles</div>
+
+        <div class="cdn-item" data-search="sharp solid fass">
+          <div class="cdn-meta">
+            <div class="cdn-label">Sharp Solid Style</div>
+            <div class="cdn-path" id="link-sharp-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-solid.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-sharp-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="sharp regular fasr">
+          <div class="cdn-meta">
+            <div class="cdn-label">Sharp Regular Style</div>
+            <div class="cdn-path" id="link-sharp-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-sharp-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="sharp light fasl">
+          <div class="cdn-meta">
+            <div class="cdn-label">Sharp Light Style</div>
+            <div class="cdn-path" id="link-sharp-light">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-light.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-sharp-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="sharp thin fast">
+          <div class="cdn-meta">
+            <div class="cdn-label">Sharp Thin Style</div>
+            <div class="cdn-path" id="link-sharp-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-thin.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-sharp-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="sharp duotone solid fasds">
+          <div class="cdn-meta">
+            <div class="cdn-label">Sharp Duotone Solid Style</div>
+            <div class="cdn-path" id="link-sharp-duotone-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-duotone-solid.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-sharp-duotone-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="sharp duotone regular fasdr">
+          <div class="cdn-meta">
+            <div class="cdn-label">Sharp Duotone Regular Style</div>
+            <div class="cdn-path" id="link-sharp-duotone-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-duotone-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-sharp-duotone-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="sharp duotone light fasdl">
+          <div class="cdn-meta">
+            <div class="cdn-label">Sharp Duotone Light Style</div>
+            <div class="cdn-path" id="link-sharp-duotone-light">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-duotone-light.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-sharp-duotone-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="sharp duotone thin fasdt">
+          <div class="cdn-meta">
+            <div class="cdn-label">Sharp Duotone Thin Style</div>
+            <div class="cdn-path" id="link-sharp-duotone-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/sharp-duotone-thin.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-sharp-duotone-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <!-- SPECIALTY & NOVELTY STYLES -->
+        <div class="category-title"><i class="fa-solid fa-palette"></i> Specialty & Novelty Styles</div>
+
+        <div class="cdn-item" data-search="jelly regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Jelly Regular Style</div>
+            <div class="cdn-path" id="link-jelly-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/jelly-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-jelly-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="jelly duo regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Jelly Duo Regular Style</div>
+            <div class="cdn-path" id="link-jelly-duo-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/jelly-duo-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-jelly-duo-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="jelly fill regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Jelly Fill Regular Style</div>
+            <div class="cdn-path" id="link-jelly-fill-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/jelly-fill-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-jelly-fill-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="slab regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Slab Regular Style</div>
+            <div class="cdn-path" id="link-slab-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/slab-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-slab-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="slab duo regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Slab Duo Regular Style</div>
+            <div class="cdn-path" id="link-slab-duo-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/slab-duo-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-slab-duo-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="slab press regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Slab Press Regular Style</div>
+            <div class="cdn-path" id="link-slab-press-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/slab-press-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-slab-press-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="slab press duo regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Slab Press Duo Regular Style</div>
+            <div class="cdn-path" id="link-slab-press-duo-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/slab-press-duo-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-slab-press-duo-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="notdog solid">
+          <div class="cdn-meta">
+            <div class="cdn-label">Notdog Solid Style</div>
+            <div class="cdn-path" id="link-notdog-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/notdog-solid.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-notdog-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="notdog duo solid">
+          <div class="cdn-meta">
+            <div class="cdn-label">Notdog Duo Solid Style</div>
+            <div class="cdn-path" id="link-notdog-duo-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/notdog-duo-solid.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-notdog-duo-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="chisel regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Chisel Regular Style</div>
+            <div class="cdn-path" id="link-chisel-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/chisel-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-chisel-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="etch solid">
+          <div class="cdn-meta">
+            <div class="cdn-label">Etch Solid Style</div>
+            <div class="cdn-path" id="link-etch-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/etch-solid.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-etch-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="graphite thin">
+          <div class="cdn-meta">
+            <div class="cdn-label">Graphite Thin Style</div>
+            <div class="cdn-path" id="link-graphite-thin">&lt;link rel="stylesheet" href="/v7.3.0/css/graphite-thin.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-graphite-thin')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="mosaic solid">
+          <div class="cdn-meta">
+            <div class="cdn-label">Mosaic Solid Style</div>
+            <div class="cdn-path" id="link-mosaic-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/mosaic-solid.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-mosaic-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="pixel regular">
+          <div class="cdn-meta">
+            <div class="cdn-label">Pixel Regular Style</div>
+            <div class="cdn-path" id="link-pixel-regular">&lt;link rel="stylesheet" href="/v7.3.0/css/pixel-regular.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-pixel-regular')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="thumbprint light">
+          <div class="cdn-meta">
+            <div class="cdn-label">Thumbprint Light Style</div>
+            <div class="cdn-path" id="link-thumbprint-light">&lt;link rel="stylesheet" href="/v7.3.0/css/thumbprint-light.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-thumbprint-light')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="vellum solid">
+          <div class="cdn-meta">
+            <div class="cdn-label">Vellum Solid Style</div>
+            <div class="cdn-path" id="link-vellum-solid">&lt;link rel="stylesheet" href="/v7.3.0/css/vellum-solid.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-vellum-solid')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
+        <div class="cdn-item" data-search="whiteboard semibold">
+          <div class="cdn-meta">
+            <div class="cdn-label">Whiteboard Semibold Style</div>
+            <div class="cdn-path" id="link-whiteboard-semibold">&lt;link rel="stylesheet" href="/v7.3.0/css/whiteboard-semibold.css"&gt;</div>
+          </div>
+          <button class="btn-copy" onclick="copyToClipboard('link-whiteboard-semibold')"><i class="fa-regular fa-copy"></i> Salin Link</button>
+        </div>
+
       </div>
     </section>
 
@@ -360,7 +732,11 @@
       <div class="preview-grid">
         <div class="icon-box">
           <i class="fa-solid fa-house"></i>
-          <span>fa-house</span>
+          <span>fa-solid fa-house</span>
+        </div>
+        <div class="icon-box">
+          <i class="fa-utility-fill fa-semibold fa-house"></i>
+          <span>utility-fill fa-house</span>
         </div>
         <div class="icon-box">
           <i class="fa-solid fa-user-gear"></i>
@@ -386,10 +762,6 @@
           <i class="fa-brands fa-react"></i>
           <span>fa-react</span>
         </div>
-        <div class="icon-box">
-          <i class="fa-brands fa-google"></i>
-          <span>fa-google</span>
-        </div>
       </div>
     </section>
   </main>
@@ -407,7 +779,7 @@
       const origin = window.location.origin;
       let text = document.getElementById(elementId).innerText;
       
-      // If deployed, convert relative URLs to absolute CDN URLs
+      // Convert relative URLs to absolute CDN URLs (e.g., https://icon.rifkyadi.tech/v7.3.0/css/...)
       if (origin.startsWith('http')) {
         text = text.replace('href="/', `href="${origin}/`);
       }
@@ -418,6 +790,35 @@
         setTimeout(() => {
           toast.classList.remove('show');
         }, 2000);
+      });
+    }
+
+    function filterCSS() {
+      const query = document.getElementById('css-search').value.toLowerCase().trim();
+      const items = document.querySelectorAll('.cdn-item');
+      const categories = document.querySelectorAll('.category-title');
+
+      items.forEach(item => {
+        const searchText = (item.getAttribute('data-search') || '') + ' ' + item.innerText.toLowerCase();
+        if (searchText.includes(query)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Show/hide categories based on visible items
+      categories.forEach(cat => {
+        let nextEl = cat.nextElementSibling;
+        let hasVisible = false;
+        while (nextEl && !nextEl.classList.contains('category-title')) {
+          if (nextEl.classList.contains('cdn-item') && nextEl.style.display !== 'none') {
+            hasVisible = true;
+            break;
+          }
+          nextEl = nextEl.nextElementSibling;
+        }
+        cat.style.display = hasVisible ? 'flex' : 'none';
       });
     }
   </script>
